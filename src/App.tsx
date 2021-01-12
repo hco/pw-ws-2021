@@ -1,3 +1,4 @@
+import MessageCompose from "./components/MessageCompose";
 import { MessageView } from "./components/MessageView";
 import { Message } from "./domain/Message";
 
@@ -13,6 +14,7 @@ const App = () => {
     <div>
       Hello World
       <MessageView message={message} />
+      <MessageCompose />
     </div>
   );
 };
