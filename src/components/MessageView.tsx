@@ -1,11 +1,16 @@
+import { Message } from "../domain/Message";
+
 interface MessageViewProps {
-  opinion: string;
-  name: string;
+  message: Message;
 }
 
 export const MessageView: React.FunctionComponent<MessageViewProps> = ({
-  name,
-  opinion,
+  message,
 }) => {
-  return null;
+  return (
+    <article>
+      {message.message}
+      <footer>{message.author}</footer>
+    </article>
+  );
 };
