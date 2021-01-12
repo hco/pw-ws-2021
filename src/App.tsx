@@ -1,3 +1,4 @@
+import Counter from "./components/Counter";
 import MessageCompose from "./components/MessageCompose";
 import { MessageView } from "./components/MessageView";
 import { Message } from "./domain/Message";
@@ -15,6 +16,7 @@ const App = () => {
       Hello World
       <MessageView message={message} />
       <MessageCompose />
+      <Counter />
     </div>
   );
 };
