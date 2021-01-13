@@ -10,7 +10,7 @@ const MessageCompose: React.FunctionComponent = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input value={messageText} onChange={(event) => setMessageText(event.target.value)} />
+      <input value={messageText} onChange={(event) => {setMessageText(event.target.value)}} />
       <button type="submit">Absenden</button>
     </form>
   );
