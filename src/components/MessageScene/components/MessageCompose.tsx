@@ -1,16 +1,34 @@
-import {useState} from "react";
+import { useState } from "react";
+import { Message } from "../../../domain/Message";
 
-const MessageCompose: React.FunctionComponent = () => {
-  const [messageText, setMessageText] = useState("")
+interface MessageComposeProps {
+  onNewMessage: (message: Message) => void;
+}
+
+const MessageCompose: React.FunctionComponent<MessageComposeProps> = ({
+  onNewMessage,
+}) => {
+  const author = "Don";
+  const [messageText, setMessageText] = useState("");
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("message", messageText);
-    setMessageText("")
+    onNewMessage({
+      id: `${Date.now()}-${author}-${Math.random()}`, // better would be a uuid
+      author,
+      message: messageText,
+      date: Date.now(),
+    });
+    setMessageText("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input value={messageText} onChange={(event) => {setMessageText(event.target.value)}} />
+      <input
+        value={messageText}
+        onChange={(event) => {
+          setMessageText(event.target.value);
+        }}
+      />
       <button type="submit">Absenden</button>
     </form>
   );
