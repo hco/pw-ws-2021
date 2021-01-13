@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Message } from "../../domain/Message";
 import MessageCompose from "./components/MessageCompose";
+import MessageComposeRedux from "./components/MessageComposeRedux";
 import MessageList from "./components/MessageList";
+import MessageListWithMessagesFromRedux from "./components/MessageListWithMessagesFromRedux";
 
 const MessageScene = () => {
   const [messages, setMessages] = useState<Readonly<Message[]>>([]);
@@ -23,6 +25,11 @@ const MessageScene = () => {
     <div>
       <MessageList messages={messages} />
       <MessageCompose onNewMessage={handleNewMessage} />
+      <hr />
+      <div style={{ border: "1px solid pink" }}>
+        <MessageListWithMessagesFromRedux />
+        <MessageComposeRedux />
+      </div>
     </div>
   );
 };

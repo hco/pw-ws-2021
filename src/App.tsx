@@ -2,6 +2,7 @@ import Counter from "./components/Counter";
 import MessageScene from "./components/MessageScene/MessageScene";
 import ClockScene from "./components/ClockScene/ClockScene";
 import configureStore from "./configureStore";
+import { Provider } from "react-redux";
 
 const store = configureStore();
 
@@ -10,13 +11,13 @@ window.store = store;
 
 const App = () => {
   return (
-    <div>
+    <Provider store={store}>
       <MessageScene />
       Hello World
       <hr />
       <ClockScene />
       <Counter />
-    </div>
+    </Provider>
   );
 };
 

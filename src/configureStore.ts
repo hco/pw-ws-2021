@@ -1,14 +1,15 @@
 import { createStore } from "redux";
-
-const reducer = (state = {}) => {
-  return state;
-};
+import { addMessageForDon, appReducer } from "./redux/reducer";
 
 const configureStore = () => {
   return createStore(
-    reducer,
+    appReducer,
     // @ts-expect-error yolo
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    window.__REDUX_DEVTOOLS_EXTENSION__ &&
+      // @ts-expect-error yolo
+      window.__REDUX_DEVTOOLS_EXTENSION__({
+        actionCreators: { addMessageForDon },
+      })
   );
 };
 
