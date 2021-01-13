@@ -1,5 +1,6 @@
 import { Message } from "../../../domain/Message";
 import { MessageView } from "./MessageView";
+import ShallowRenderer from "react-test-renderer/shallow";
 
 interface MessageListProps {
   messages: Readonly<Message[]>;
