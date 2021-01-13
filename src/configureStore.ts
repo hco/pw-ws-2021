@@ -1,5 +1,6 @@
 import { createStore } from "redux";
-import { addMessageForDon, appReducer } from "./redux/reducer";
+import { appReducer } from "./redux/reducer";
+import { addMessageForDon } from "./redux/messages/actions";
 
 const configureStore = () => {
   return createStore(
