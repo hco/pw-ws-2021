@@ -1,32 +1,15 @@
-import { useState } from "react";
-import Clock from "./components/Clock";
 import Counter from "./components/Counter";
-import MessageCompose from "./components/MessageCompose";
-import { MessageView } from "./components/MessageView";
-import { Message } from "./domain/Message";
-import MessageList from "./components/MessageList";
+import MessageScene from "./components/MessageScene";
+import ClockScene from "./components/ClockScene";
 
 const App = () => {
-  const [showClock, setShowClock] = useState(true);
-  const message: Message = {
-    author: "Fabian",
-    message: "hallo!",
-    date: 4711,
-    id: "gürzenich",
-  };
-
   return (
     <div>
+      <MessageScene />
       Hello World
-      <MessageView message={message} />
-      <MessageCompose />
-      <MessageList />
       <hr />
+      <ClockScene />
       <Counter />
-      {showClock && <Clock />}
-      <button onClick={() => setShowClock((prevShowClock) => !prevShowClock)}>
-        Uhr {showClock ? "ausschalten" : "anschalten"}
-      </button>
     </div>
   );
 };
