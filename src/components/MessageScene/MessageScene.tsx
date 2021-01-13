@@ -1,6 +1,6 @@
 import { useState } from "react";
-import MessageCompose from "./MessageCompose";
-import MessageList from "./MessageList";
+import MessageCompose from "./components/MessageCompose";
+import MessageList from "./components/MessageList";
 
 const MessageScene = () => {
   const [messages, setMessages] = useState([

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Clock from "./Clock";
-import MessageCompose from "./MessageCompose";
-import MessageList from "./MessageList";
+import Clock from "./components/Clock";
+import MessageCompose from "../MessageScene/components/MessageCompose";
+import MessageList from "../MessageScene/components/MessageList";
 
 const ClockScene = () => {
   const [showClock, setShowClock] = useState(true);

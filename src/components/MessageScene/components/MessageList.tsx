@@ -1,4 +1,4 @@
-import { Message } from "../domain/Message";
+import { Message } from "../../../domain/Message";
 import { MessageView } from "./MessageView";
 
 const MessageList: React.FunctionComponent = () => {
