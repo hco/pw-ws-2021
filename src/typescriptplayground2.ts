@@ -1,5 +1,6 @@
 // import { convertCompilerOptionsFromJson } from "typescript";
 // import { Message } from "./domain/Message";
+export const foo = "bar";
 
 // export class User {
 //   // getName() {
