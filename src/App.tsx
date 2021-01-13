@@ -4,6 +4,7 @@ import Counter from "./components/Counter";
 import MessageCompose from "./components/MessageCompose";
 import { MessageView } from "./components/MessageView";
 import { Message } from "./domain/Message";
+import MessageList from "./components/MessageList";
 
 const App = () => {
   const [showClock, setShowClock] = useState(true);
@@ -19,6 +20,8 @@ const App = () => {
       Hello World
       <MessageView message={message} />
       <MessageCompose />
+      <MessageList />
+      <hr />
       <Counter />
       {showClock && <Clock />}
       <button onClick={() => setShowClock((prevShowClock) => !prevShowClock)}>
